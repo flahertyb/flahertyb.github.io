@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "Astronomy Picture of the Day",
+  "description": "This extension displays the Astronomy Picture of the Day from NASA's website.",
+  "version": "1.0",
+
+  "chrome_url_overrides" : {
+    "newtab" : "apod.html"
+  },
+  "permissions": [ "tabs" ],
+  "content_scripts": [
+    {
+      "matches": [""],
+      "css": ["style.css"],
+      "js": ["jquery.min.js", "script.js"]
+    }
+  ]
+}
