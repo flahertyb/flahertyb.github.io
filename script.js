@@ -4,7 +4,7 @@
   fallback.text = 'Head to http://apod.nasa.gov/ for more great astronomy pictures';
 
   var apod = 'https://astronomy-pic-of-the-day.herokuapp.com/api.json',
-      picture, 
+      picture,
       info;
 
   function parseAPOD(url) {
@@ -37,25 +37,23 @@
     now = new Date();
     months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
     formattedDate = months[now.getMonth()] + ' ' + now.getDate();
-    $('.date').html(formattedDate); 
+    $('.date').html(formattedDate);
   }
 
   function displayInfo() {
     $('.info-icon').click( function() {
         $('.info').slideToggle('slow');
       }
-    );  
+    );
   }
 
   function init() {
-    
+
       parseAPOD(apod);
       $( document ).ready(function() {
         displayInfo();
       });
   }
 
-  if (document.location.pathname === '/apod.html') {
-    init();
-  }
+  init();
 })();
